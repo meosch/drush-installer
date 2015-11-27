@@ -40,7 +40,7 @@ function install_composer(){
 if [ ! -d "~/bin" ]; then
 mkdir ~/bin
 fi
-curl -sS https://getcomposer.org/installer | php -- --install-dir=bin
+curl -sS https://getcomposer.org/installer | php
 mv composer.phar ~/bin/composer
 }
 
