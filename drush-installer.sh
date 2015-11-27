@@ -58,7 +58,24 @@ source ~/.bash_profile
 }
 
 function install_drush(){
-   composer global require drush/drush:${drushbranch}
+  composer global require drush/drush:${drushbranch}
+}
+
+function install_drush_recipes(){
+  drush -y dl drush_recipes
+# Now get our cookbook
+  mkdir ~/.drush/drecipes
+  cd ~/.drush/drecipes
+  git clone https://github.com/meosch/drushcookbook.git
+  drush cc drush
+# Now install drush extensions not available via composer
+  drush -y cook drush_extensions
+}
+
+function install_drush_extensions_via_composer(){
+  cd ~/.drush
+  composer require davereid/drush-patchfile:dev-master
+  composer require drupal/site_audit:dev-7.x-1
 }
 
 function finished(){
@@ -72,4 +89,6 @@ get_info
 install_composer
 add_composer_to_path
 install_drush
+install_drush_recipes
+install_drush_extensions_via_composer
 finished
