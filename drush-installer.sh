@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # IMPORTANT. You must have curl, wget, php and git installed
 PS4=':${LINENO} + '
 #set -x
@@ -23,12 +23,7 @@ if ! type git > /dev/null; then
   exit 1;
 fi
 }
-
-function switch_shell(){
-# Use Bash as command line (if you like you can use your own CL too!)
-chsh -s "$(command -v bash)" "$USER"
-}
-
+ 
 function get_info(){
 # Enter Drush version (branch from Github)
 # Notice that you need Drush 7.x (branch master) to be able to work with Drupal 8.x
