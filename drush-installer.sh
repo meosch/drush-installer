@@ -52,7 +52,7 @@ function add_composer_to_path(){
 # for more info and code you can add to your ~/.bash_profile file.
 echo "Adding line to ~/.bashrc to add the path to composer"
 touch ~/.bash_profile
-echo echo 'export PATH="$HOME/.composer/vendor/bin:$PATH"' > ~/.bashrc
+echo echo 'export PATH="$HOME/.composer/vendor/bin:$PATH"' >> ~/.bashrc
 # Source the changed .bash_profile or restart ssh session
 source ~/.bash_profile
 }
