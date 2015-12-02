@@ -51,10 +51,10 @@ function add_composer_to_path(){
 # See http://www.joshstaiger.org/archives/2005/07/bash_profile_vs.html 
 # for more info and code you can add to your ~/.bash_profile file.
 echo "Adding line to ~/.bashrc to add the path to composer"
-touch ~/.bash_profile
+touch ~/.bashrc
 echo echo 'export PATH="$HOME/.composer/vendor/bin:$PATH"' >> ~/.bashrc
 # Source the changed .bash_profile or restart ssh session
-source ~/.bash_profile
+source ~/.bashrc
 }
 
 function install_drush(){
